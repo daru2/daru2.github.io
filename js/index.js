@@ -80,19 +80,15 @@ $(document).ready(function(){
             $("#gnb .menu li").removeClass("on");
         }
 
-        // /* #page2 */
-        // if( cnt == 1 ){
-        //     $("#page2").find("*").addClass("on");
-        // } else {
-        //     $("#page2").find("*").removeClass("on");
-        // } // removeClass가 안되는 이유?
-
-        // if( cnt == 2){
-        //     $(".circle_box").addClass("on");
-        // } else {
-        //     $(".circle_box").removeClass("on");
-        // } // circle은 둘다 안먹히는 중
-
+        if( cnt == 3 ){
+            $(".slider").fadeIn(500);
+            setTimeout(function(){
+                $(".btn_box").fadeIn(500);
+            }, 500);
+        } else {
+            $(".slider").fadeOut(300);
+            $(".btn_box").fadeOut(300);
+        }
     });
 
     /* /스크롤 시 page별 on클래스 부여 */
@@ -123,28 +119,56 @@ $(document).ready(function(){
 
     /* page4 슬라이더 */
 
+    // .sl Class = left: 100vw;
+    // .sl.on Class = left: 0;
+    // .sl.out Class = left: -100vw;
+
+    var len = $(".sl").length - 1;
+
     function nextAni(){
-        // $(".sl").eq(0).appendTo(".slider");
-        $(".sl").eq(1).css("z-index","3");
-        $(".sl").eq(1).addClass("on");
-        setTimeout( function(){
-            $(".slider .sl").eq(1).siblings().removeClass("on");
-            $(".slider .sl").eq(0).appendTo($(".slider"))
-            $(".sl").eq(0).css("z-index","0");
-        }, 600);
+        $(".sl").eq(1).addClass("on").css("transition", "0.5s");
+        
+        setTimeout(function(){
+            $(".sl").eq(0).removeClass("on");
+            $(".sl").eq(0).appendTo(".slider");
+            $(".sl").eq(0).siblings().css("transition", "none");
+            $(".sl").eq(len).addClass("out");
+            $(".sl").eq(len).siblings().removeClass("out");
+        }, 500);
     }
-
-
-    // 버튼 연속 클릭 막기
-    $(".sl_btn").on("click", function(){
+    function prevAni(){
+        setTimeout(function(){
+            $(".sl").eq(len).removeClass("out");
+            $(".sl").eq(len).addClass("on").css("transition", "0.5s");
+        }, 1);
+        setTimeout(function(){
+            $(".sl").eq(0).removeClass("on");
+            $(".sl").eq(len).prependTo(".slider");
+            $(".sl").eq(0).siblings().css("transition", "none");
+            $(".sl").eq(len).addClass("out");
+            $(".sl").eq(len).siblings().removeClass("out");
+        }, 500);
+        
+    }
+    // 버튼 연속 클릭 막고 동작
+    $(".next_btn").on("click", function(){
         nextAni();
-        var btn = $(this);
+        var btn = $(".next_btn, .prev_btn");
         btn.attr("disabled", true);
         setTimeout( function() {
             btn.removeAttr("disabled");
         }, 700);
     });
 
+
+    $(".prev_btn").on("click", function(){
+        prevAni();
+        var btn = $(".next_btn, .prev_btn");
+        btn.attr("disabled", true);
+        setTimeout( function() {
+            btn.removeAttr("disabled");
+        }, 700);
+    });
 
     /* /page4 슬라이더 */
 

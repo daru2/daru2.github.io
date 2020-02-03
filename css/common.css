@@ -16,8 +16,19 @@ th, td {display: table-cell;}
 input[type=checkbox], input[type=radio] { display: none; }
 /* /RESET */
 
+/* COLOR */
+
+color1 { color: #e73c7e; font-weight: bold; font-size: 1.4rem;}
+color2 { color: #ee7752; font-weight: bold;}
+color3 { color: #23a6d5; font-weight: bold;}
+color4 { color: #23d5ab; font-weight: bold;}
+color5 { color: crimson; font-weight: bold;}
+
+/* /COLOR */
+
+
 /* AREA */
-.back_gra { position: fixed; width: 100%; height: 100%;	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); background-size: 400% 400%; animation: gradient 15s ease infinite; z-index: -1;}
+.back_gra { position: fixed; width: 100%; height: 100%;	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); background-size: 400% 400%; animation: gradient 10s ease infinite; z-index: -1;}
 @keyframes gradient {
 	0% { background-position: 0% 50%;}
 	50% { background-position: 100% 50%;}
@@ -37,6 +48,7 @@ input[type=checkbox], input[type=radio] { display: none; }
 .menu { position: absolute; display: flex; flex-flow: column; justify-content: center; align-items: center; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; transition: 0.2s;}
 .menu li { font-size: 2rem; padding: 3rem; font-weight: bold; color: white; cursor: pointer;}
 .menu li.on { color: crimson;}
+.menu li:hover { color: crimson;}
 
 #hd:hover { width: 20vw;}
 #hd:hover .menu_icon_box { left: 40vw}
@@ -78,7 +90,6 @@ input[type=checkbox], input[type=radio] { display: none; }
 .profile_pic { height: 45%; background-image: linear-gradient(to bottom, skyblue, white);overflow: hidden;}
 .my_pic { display: block; margin: 0 auto;}
 
-
 .profile_tit { height: 10%; display: flex; justify-content: center; align-items: center; border-top: 1px solid #555; border-bottom: 1px solid #555; background-color: #f1f1f1; font-size: 1.4rem; font-weight: bold; letter-spacing: 0.5rem;}
 .profile_con { height: 45%;  background-color: white;}
 .profile_con p { width: 100%; height: 25%;}
@@ -97,16 +108,26 @@ input[type=checkbox], input[type=radio] { display: none; }
 .more_btn.on .line2 { transform: translate(-50%, -50%) rotate(315deg);}
 
 
-.page2 .p2_right { width: 100%; height: 25%; top: 50%; right: 0; transform: translate(0, -50%); background-color: #f1f1f1;}
-.p2_right div { display: flex; flex-flow: column; align-items: center; justify-content: center; width: 100%; height: 50%; opacity: 0; transition: 0.3s;}
-.p2_right .box_tit { font-size: 2.5rem; letter-spacing: 1rem; text-align: center; padding-bottom: 4rem;}
-.p2_right span { display: block; font-size: 1.2rem; padding-bottom:0.5rem;}
-.more_bot span { text-align: center;}
+.page2 .p2_right { display: flex; justify-content: center; align-items: center; width: 100%; height: 25%; top: 50%; right: 0; transform: translate(0, -50%); background-color: #f1f1f1;}
+.p2_right_box { position: relative; width: 60%; height: 60%; opacity: 0;}
+.p2_right_box div { float: left; display: flex; flex-flow: column; justify-content: center; align-items: center;  width: calc(50% - 3px); height: calc(50% - 3px);}
+.p2_right span { display: block; padding-bottom: 0.5rem; text-align: center;}
+.p2_right .box_tit { font-size: 1.4rem; color: #aaa; padding-bottom: 2rem;}
+.p2_right .box_com { color: #aaa;}
+.more_box1 { border-right: 3px solid #aaa; border-bottom: 3px solid #aaa;}
+.more_box2 { border-bottom: 3px solid #aaa;}
+.more_box3 { border-right: 3px solid #aaa;}
+
+.p2_right_box div:hover .box_tit,
+.p2_right_box div:hover .box_com{ color: white;}
+
+
+
 
 .p2_left.on { left: 0; margin-left: 0; background-color: rgba(0,0,0,0.6);}
-.p2_right.on { width: 50%; height: 100%; top: 0; transform: translate(0); margin-right: 0; background-color: #fff;}
+.p2_right.on { width: 50%; height: 100%; top: 0; transform: translate(0); margin-right: 0; background-color: rgba(0,0,0,0.8);}
 .p2_left.on .profile_box { transform: translate(-50%, -50%) rotate(-10deg);}
-.p2_right.on div { opacity: 1;}
+.p2_right.on .p2_right_box { transition: 0.5s 0.3s; opacity: 1;}
 
 
 /* /PAGE2 */
@@ -123,7 +144,7 @@ input[type=checkbox], input[type=radio] { display: none; }
 .tools i { color: #23a6d5;}
 .description i { color:#23d5ab;}
 .p3_explan { display: flex; justify-content: center; align-items: center; width: 100%; height: 30%; text-align: center; font-size: 2rem; font-weight: bold; letter-spacing: 0.5rem; border-top: 3px solid #555;}
-.p3_con { position: relative; clear: both; display: flex; justify-content: center; align-items: center; width: 100%; height: calc(100% - 3rem);}
+.p3_con { position: relative; clear: both; display: flex; justify-content: center; align-items: center; width: 100%; height: calc(100% - 3rem); opacity: 0; transition: 0.8s 0.2s}
 
 .part:hover { background-color: #555;}
 .part:hover i { color: white; transform: rotate(360deg);}
@@ -134,7 +155,8 @@ input[type=checkbox], input[type=radio] { display: none; }
 .p3_cls_btn.on { opacity: 1;}
 .part.on { width: 100%; background-color: rgba(0,0,0,0.6); border-radius: 0; cursor: inherit;}
 .part.on .p3_icon,
-.part.on .p3_explan { float: left; width: auto; height: 3rem; font-size: 1.4rem; text-align: center; border: 0; padding: 1rem;}
+.part.on .p3_explan { float: left; width: auto; height: 3rem; font-size: 1.4rem; text-align: center; border: 0; padding: 1rem; color: white;}
+.part.on .p3_con { opacity: 1;}
 
 
 
@@ -155,14 +177,13 @@ input[type=checkbox], input[type=radio] { display: none; }
 .circle_chart { display: block; margin: 10px auto; max-width: 80%; max-height: 250px;}
 .circle-bg { fill: none; stroke: transparent; stroke-width: 3.8;}
 .circle { stroke: orangered; fill: none; stroke-width: 2.8; stroke-linecap: round;}
-.circle_box.on .circle { animation: progress 2s ease-out forwards;}
+.progress.on .circle { animation: progress 3s ease-out forwards;}
 
-.page3_box.on { animation: bkdropAni 2s ease-out forwards;}
-.ab1.on { animation: dropAni 2s 2s ease-out forwards;}
-.ab2.on { animation: rvdropAni 2s 3s ease-out forwards;}
-.ab3.on { animation: dropAni 2s 4s ease-out forwards;}
-.ab4.on { animation: rvdropAni 2s 5s ease-out forwards;}
-.ab5.on { animation: dropAni 2s 6s ease-out forwards;}
+@keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+}
 
 /* /PROGRESS PART */
 
@@ -197,11 +218,59 @@ input[type=checkbox], input[type=radio] { display: none; }
 
 /* PAGE4 */
 
-.slider { position: relative; width: 100%; height: 100%;}
-.sl { position: absolute; width: 100%; height: 100%; top: 0; left: 100vw; transition: 0.5s; z-index: 0;}
+.slider { position: relative; display: none; width: 100%; height: 100%;}
+.sl { position: absolute; width: 100%; height: 100%; top: 0; left: 100vw; z-index: 0;}
 .sl_con { position: relative; width: 100%; height: 100%;}
-.sl_img { position: absolute; width: 100%; opacity: 1;}
-.sl.on { left: 0; }
+.sl_img { position: absolute; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center; background-size: cover; z-index: -1;}
+.sl_img1 { background-image:url(../src/cap1.png); }
+.sl_img2 { background-image:url(../src/cap2.png); }
+.sl_img3 { background-image:url(../src/cap3.png); }
+.sl_img4 { background-image:url(../src/cap4.png); }
+.sl_img5 { background-image:url(../src/cap5.png); }
 
-.sl_btn { position: absolute; z-index:5; width: 50px; height: 50px; background-color: black; top: 50%; left: 50%; cursor: pointer;}
+.left_box { position: relative; width: 25%; height: 100%; background-color: rgba(0,0,0,0.8); opacity: 0; transition: 1s 0.5s;}
+.sl_index { font-size: 1.4rem; color: white; text-align: center; padding-top: 4rem;}
+.sl_tit { font-size: 3rem; color: white; text-align: center; padding-top: 2rem;}
+.sl_char { font-size: 1.2rem; color: white; text-align: center; padding-top: 2rem; line-height: 2rem; letter-spacing: 0.1rem;}
+.sl_concept { font-size: 1.2rem; color: white; text-align: center; padding-top: 4rem; line-height: 2rem;}
+.sl_color { display: block; width: 100%; height: 175px; padding-top: 3rem;}
+.sl_link { display: block; text-align: center; padding-top: 3rem;}
+.sl_link i { color: white;}
+.sl_link:hover i { color: crimson;}
+
+
+.btn_box { position: absolute; display: flex; width: 25%; height: 20%; bottom: 0; left: 0; border-top: 3px solid #333; background-color: black; z-index: 11;}
+.btn_box button { display: block; width: 50%; height: 100%; color: white; font-weight: bold; font-size: 1.4rem; cursor: pointer; transition: 0.2s;}
+.btn_box button:hover { color: black;}
+.next_btn:hover { background-color: white; text-decoration: underline;}
+.prev_btn:hover { background-color: white; text-decoration: underline;}
+
+.sl.on { left: 0;}
+.sl.out { left: -100vw;}
+.sl.on .left_box { opacity: 1;}
+
 /* /PAGE4*/
+
+/* PAGE5 */
+
+.page5 { display: flex; flex-flow: column; justify-content: center; align-items: center;}
+.contact_tit { color: white; font-size: 4rem; letter-spacing: 1rem; padding-bottom: 2rem;}
+.contact_box { width: 60%; height: 60%; border: 5px solid white; border-radius: 2rem;}
+.p5_left,
+.p5_right { float: left; position: relative; display: flex; flex-flow: column; justify-content: center; align-items: center; width: 50%; height: 100%;}
+.left_tit { position: relative; font-size: 2rem; letter-spacing: 0.5rem; color: white; padding-bottom: 3rem;}
+.contact_subtit { font-size: 1.4rem; letter-spacing: 0.2rem; color: white; padding-bottom: 1rem; }
+.contact_con { font-size: 1.2rem; letter-spacing: 0.1rem; color: white; padding-bottom: 2rem; }
+.contact_icon {display: flex; width: 30%; justify-content: space-around;}
+.contact_icon a { display: block; color: white; padding-top: 2rem; transition: 0.2s;}
+.contact_icon a:hover { color: black;}
+
+.in_t { display: block; width: 60%; height: 3rem; background-color: white; margin-bottom: 1rem; padding-left: 1rem; box-shadow: 0 0 10px #ddd;}
+
+#frm_con { display: block; width: 60%; height: 10rem; line-height: 2rem; font-size: 0.9rem; margin-bottom: 2rem; padding-left: 1rem;}
+#frm_submit { display: block; width: 10rem; height: 4rem; border: 4px solid white; border-radius: 1rem; font-size: 1.2rem; font-weight: bold; color: white; cursor: pointer;  transition: 0.2s;}
+#frm_submit:hover { color: black; border-color: black;}
+
+
+
+/* /PAGE5 */
