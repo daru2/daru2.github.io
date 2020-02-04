@@ -93,7 +93,7 @@ $(document).ready(function(){
     /* /스크롤 시 page별 on클래스 부여 */
 
     /* page2 more 클릭 */
-    $(".page2 .more_btn").on("click", function(){
+    $(".page2 .more_btn, .more_cls_btn").on("click", function(){
         $(this).toggleClass("on");
         $(".p2_left, .p2_right").toggleClass("on");
     });
@@ -172,4 +172,14 @@ $(document).ready(function(){
     /* /page4 슬라이더 */
 
 
+    /* 모바일 */
+
+    if(parseInt($(window).width()) < 1280){
+        $(".part i").css("font-size", "80px");
+        $(".sl_link i").css("font-size", "30px");
+        $(".menu_icon").on("click", function(){
+            $("#hd").toggleClass("on");
+        });
+    }
+    /* /모바일 */
 });

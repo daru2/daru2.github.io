@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+@media screen and ( max-width: 700px ){
+    html, body { font-size: 10px; }
+    #hd { width: 4rem; height: 4rem; top: 1rem; right: 1rem; background-color: transparent; border-left: 0;}
+    #gnb { display: none;}
+    .menu_icon_box .line { box-shadow: 0 0 3px #555; transform: translate(-50%, -50%);}
+    .menu_icon_box .line1 { top: 40%; left: 50%;}
+    .menu_icon_box .line2 { top: 60%; left: 50%;}
+    #hd.on { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.8);}
+    #hd.on .menu_icon_box { top: 2rem; left: 2rem; transform: translate(0);}
+    #hd.on #gnb { display: block; width: 60%; height: 60%;}
+    #hd.on .line { box-shadow: 0;}
+    #hd.on .line1 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( 45deg);}
+    #hd.on .line2 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( -45deg);}
+
+    .p1_txt_box { width: 70%}
+    .p1_txt1 { font-size: 2.5rem;}
+    .p1_txt2 { font-size: 1.3rem;}
+    .p1_txt3 { font-size: 1rem;}
+
+    .p2_left.on, .p2_right.on { width: 100%; height: 100%;}
+    .p2_left { width: 100%; height: 100%; left: 0; margin-left: 0;}
+    .profile_box { width: 70%; height: 80%;}
+    .my_pic { width: 100%;}
+
+    .page2 .p2_right { width: 100%; height: 0; right: 0; top: 0; transform: translate(0);}
+    .page2 .p2_right.on { z-index: 10;}
+    .p2_right_box { width: 100%; height: 100%;}
+
+    .p2_right.on { height: 100%;}
+    .p2_right.on div { border: 0;}
+    .more_btn.on .line1 { transform: translate(-50%, -50%) rotate(90deg); }
+    .more_btn.on .line2 { transform: translate(-50%, -50%); }
+    .p2_right.on .more_cls_btn { position: absolute; display: block; width: 5rem; height: 5rem; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .p2_right.on .more_cls_btn i { color: white;}
+
+    .page3 { flex-flow: column;}
+    .part { width: 80%; height: 30%; background-color: rgba(255,255,255,0.4);}
+    .p3_explan { border-color: #888;}
+
+    .p3_con .item { width: 40%;}
+    .part.on { height: 60%;}
+
+    .tool_icon { width: 3rem;}
+    .tool_com { letter-spacing: 0; font-size: 1.1rem;}
+    .gra_tool .tool_icon { padding-right: 1rem;}
+    .code_icon_box { height: 50%;}
+
+    .description .p3_con { width: 80%; height: 80%;}
+    .left_box { width: 35%;}
+    .sl_index { font-size: 1rem;}
+    .sl_tit { font-size: 1.6rem;}
+    .sl_char { font-size: 1rem;}
+    .sl_concept { display: none;}
+    .sl_color { display: none;}
+    .btn_box { width: 35%; height: 40%; flex-wrap: wrap;}
+    .btn_box button { width: 100%; height: 50%;}
+    
+    .contact_box { width: 80%;}
+    .p5_left { width: 100%;}
+    .p5_right { display: none;}
+    .contact_icon { width: 50%;}
+}
+
+@media screen and ( min-width: 701px ) and ( max-width: 1279px ){
+    html, body { font-size: 12px; }
+    #hd { width: 4rem; height: 4rem; top: 1rem; right: 1rem; background-color: transparent; border-left: 0;}
+    #gnb { display: none;}
+    .menu_icon_box .line { box-shadow: 0 0 3px #555; transform: translate(-50%, -50%);}
+    .menu_icon_box .line1 { top: 40%; left: 50%;}
+    .menu_icon_box .line2 { top: 60%; left: 50%;}
+    #hd.on { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.8);}
+    #hd.on .menu_icon_box { top: 2rem; left: 2rem; transform: translate(0);}
+    #hd.on #gnb { display: block; width: 60%; height: 60%;}
+    #hd.on .line { box-shadow: 0;}
+    #hd.on .line1 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( 45deg);}
+    #hd.on .line2 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( -45deg);}
+    
+
+
+    .p1_txt_box { width: 70%}
+    .p1_txt1 { font-size: 3rem;}
+    .p1_txt2 { font-size: 1.5rem;}
+    .p1_txt3 { font-size: 1.5rem;}
+
+    .p2_left.on, .p2_right.on { width: 100%; height: 100%;}
+    .p2_left { width: 100%; height: 100%; left: 0; margin-left: 0;}
+    .profile_box { width: 50%; height: 80%;}
+    .my_pic { width: 100%;}
+
+    .page2 .p2_right { width: 100%; height: 0; right: 0; top: 0; transform: translate(0);}
+    .page2 .p2_right.on { z-index: 10;}
+    .p2_right_box { width: 100%; height: 100%;}
+
+    .p2_right.on { height: 100%;}
+    .p2_right.on div { border: 0;}
+    .p2_right.on .more_cls_btn { position: absolute; display: block; width: 5rem; height: 5rem; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .p2_right.on .more_cls_btn i { color: white;}
+
+    .page3 { flex-flow: column;}
+    .part { width: 80%; height: 30%; background-color: rgba(255,255,255,0.4);}
+    .p3_explan { border-color: #888;}
+
+    .p3_con .item { width: 40%;}
+    .part.on { height: 60%;}
+
+    .tool_icon { width: 3rem;}
+    .tool_com { letter-spacing: 0; font-size: 1.1rem;}
+    .gra_tool .tool_icon { padding-right: 1rem;}
+    .code_icon_box { height: 50%;}
+
+    .description .p3_con { width: 80%; height: 80%;}
+
+    .sl_tit { font-size: 2rem;}
+    .sl_char { font-size: 1rem;}
+    .sl_concept { font-size: 1rem;}
+    .sl_color { display: none;}
+    .btn_box { width: 25%; height: 40%; flex-wrap: wrap;}
+    .btn_box button { width: 100%; height: 50%;}
+    
+    .contact_box { width: 80%;}
+    .p5_left { width: 100%;}
+    .p5_right { display: none;}
+    .contact_icon { width: 50%;}
+}
