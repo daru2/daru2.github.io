@@ -32,7 +32,7 @@ $(document).ready(function(){
                 }
             }
              
-            // 화면 이동 0.8초(800)
+            // 화면 이동 0.5초(500)
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'
             }, {
@@ -72,7 +72,6 @@ $(document).ready(function(){
     var winH = parseInt($(window).height());
     $(window).scroll(function(){
         var cnt = parseInt($(this).scrollTop() / winH);
-        $(".page").eq(cnt).siblings().find(".page_cover").fadeOut(500);
         if( cnt >= 0 ){
             $("#gnb .menu li").removeClass("on");
             $("#gnb .menu li").eq(cnt).addClass("on");
