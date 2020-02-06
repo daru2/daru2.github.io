@@ -81,13 +81,6 @@ $(document).ready(function(){
             $("#gnb .menu li").removeClass("on");
             $(".menu_mo li").removeClass("on");
         }
-
-        if( cnt == 3 ){
-            $(".slider").fadeIn(500);
-            setTimeout(function(){
-                $(".btn_box").fadeIn(500);
-            }, 500);
-        }
     });
 
     /* /스크롤 시 page별 on클래스 부여 */
