@@ -2,17 +2,16 @@
 
 @media screen and ( max-width: 700px ){
     html, body { font-size: 10px; }
-    #hd { width: 4rem; height: 4rem; top: 1rem; right: 1rem; background-color: transparent; border-left: 0;}
-    #gnb { display: none;}
-    .menu_icon_box .line { box-shadow: 0 0 3px #555; transform: translate(-50%, -50%);}
-    .menu_icon_box .line1 { top: 40%; left: 50%;}
-    .menu_icon_box .line2 { top: 60%; left: 50%;}
-    #hd.on { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.8);}
-    #hd.on .menu_icon_box { top: 2rem; left: 2rem; transform: translate(0);}
-    #hd.on #gnb { display: block; width: 60%; height: 60%;}
-    #hd.on .line { box-shadow: 0;}
-    #hd.on .line1 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( 45deg);}
-    #hd.on .line2 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( -45deg);}
+    .mo { display: block;}
+    #hd { display: none;}
+    #hd_mo { display: block;}
+    .gnb_btn_mo { position: fixed; width: 3rem; height: 3rem; top: 3rem; right: 3rem; cursor: pointer; z-index: 100;}
+    .gnb_btn_mo i { color: white; text-shadow: 0 0 5px #555;}
+    #gnb_mo { position: fixed; display: none; width: 100vw; height: 100vh; top: 0; left: 0; background-color: rgba(0,0,0,0.8); z-index: 9999;}
+    .menu_mo { position: relative; display: flex; flex-flow: column; justify-content: center; align-items: center; width: 100%; height: 100%;}
+    .menu_mo li { color: white; font-size: 2rem; font-weight: bold; padding: 2rem; letter-spacing: 0.2rem; cursor: pointer;}
+    .menu_mo li.on { color: crimson;}
+    .gnb_cls_btn_mo { position: absolute; width: 3rem; height: 3rem; top: 3rem; right: 3rem; cursor: pointer; color: white; text-shadow: 0 0 5px #555;}
 
     .p1_txt_box { width: 70%}
     .p1_txt1 { font-size: 2.5rem;}
@@ -27,12 +26,13 @@
     .page2 .p2_right { width: 100%; height: 0; right: 0; top: 0; transform: translate(0);}
     .page2 .p2_right.on { z-index: 10;}
     .p2_right_box { width: 100%; height: 100%;}
+    .p2_right .more_cls_btn { opacity : 0; cursor: pointer;}
 
     .p2_right.on { height: 100%;}
     .p2_right.on div { border: 0;}
     .more_btn.on .line1 { transform: translate(-50%, -50%) rotate(90deg); }
     .more_btn.on .line2 { transform: translate(-50%, -50%); }
-    .p2_right.on .more_cls_btn { position: absolute; display: block; width: 5rem; height: 5rem; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .p2_right.on .more_cls_btn { position: absolute; display: block; width: 5rem; height: 5rem; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1;}
     .p2_right.on .more_cls_btn i { color: white;}
 
     .page3 { flex-flow: column;}
@@ -65,17 +65,16 @@
 
 @media screen and ( min-width: 701px ) and ( max-width: 1279px ){
     html, body { font-size: 12px; }
-    #hd { width: 4rem; height: 4rem; top: 1rem; right: 1rem; background-color: transparent; border-left: 0;}
-    #gnb { display: none;}
-    .menu_icon_box .line { box-shadow: 0 0 3px #555; transform: translate(-50%, -50%);}
-    .menu_icon_box .line1 { top: 40%; left: 50%;}
-    .menu_icon_box .line2 { top: 60%; left: 50%;}
-    #hd.on { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.8);}
-    #hd.on .menu_icon_box { top: 2rem; left: 2rem; transform: translate(0);}
-    #hd.on #gnb { display: block; width: 60%; height: 60%;}
-    #hd.on .line { box-shadow: 0;}
-    #hd.on .line1 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( 45deg);}
-    #hd.on .line2 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate( -45deg);}
+    .mo { display: block;}
+    #hd { display: none;}
+    #hd_mo { display: block;}
+    .gnb_btn_mo { position: fixed; width: 3rem; height: 3rem; top: 3rem; right: 3rem; cursor: pointer; z-index: 100;}
+    .gnb_btn_mo i { color: white; text-shadow: 0 0 5px #555;}
+    #gnb_mo { position: fixed; display: none; width: 100vw; height: 100vh; top: 0; left: 0; background-color: rgba(0,0,0,0.8); z-index: 9999;}
+    .menu_mo { position: relative; display: flex; flex-flow: column; justify-content: center; align-items: center; width: 100%; height: 100%;}
+    .menu_mo li { color: white; font-size: 3rem; font-weight: bold; padding: 2rem; letter-spacing: 0.2rem; cursor: pointer;}
+    .menu_mo li.on { color: crimson;}
+    .gnb_cls_btn_mo { position: absolute; width: 3rem; height: 3rem; top: 3rem; right: 3rem; cursor: pointer; color: white; text-shadow: 0 0 5px #555;}
     
 
 
@@ -88,14 +87,16 @@
     .p2_left { width: 100%; height: 100%; left: 0; margin-left: 0;}
     .profile_box { width: 50%; height: 80%;}
     .my_pic { width: 100%;}
-
     .page2 .p2_right { width: 100%; height: 0; right: 0; top: 0; transform: translate(0);}
     .page2 .p2_right.on { z-index: 10;}
     .p2_right_box { width: 100%; height: 100%;}
+    .p2_right .more_cls_btn { opacity : 0; cursor: pointer;}
 
     .p2_right.on { height: 100%;}
     .p2_right.on div { border: 0;}
-    .p2_right.on .more_cls_btn { position: absolute; display: block; width: 5rem; height: 5rem; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .more_btn.on .line1 { transform: translate(-50%, -50%) rotate(90deg); }
+    .more_btn.on .line2 { transform: translate(-50%, -50%); }
+    .p2_right.on .more_cls_btn { position: absolute; display: block; width: 5rem; height: 5rem; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1;}
     .p2_right.on .more_cls_btn i { color: white;}
 
     .page3 { flex-flow: column;}
